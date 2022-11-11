@@ -42,8 +42,9 @@ public class SimpleAsyncTask extends AsyncTask<Void, Integer, String> {
 
     @Override
     protected void onPostExecute(String result) {
-        // since mTextView is a WeakReference, get must be called to get the composed TextView
+        // since mTextView is a WeakReference, get must be called to obtain the composed TextView
         mTextView.get().setText(result);
+        mProgressBar.get().setProgress(0);
     }
 
     @Override
