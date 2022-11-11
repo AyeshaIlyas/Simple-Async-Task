@@ -28,7 +28,7 @@ public class SimpleAsyncTask extends AsyncTask<Void, Integer, String> {
         for (int i = 20; i < number; i += 20) {
             try {
                 Thread.sleep(i);
-                publishProgress(i);
+                publishProgress((int) (float) i / number * 100);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
