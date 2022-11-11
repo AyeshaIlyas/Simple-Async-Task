@@ -25,7 +25,7 @@ public class SimpleAsyncTask extends AsyncTask<Void, Integer, String> {
         int number = (new Random().nextInt(10) + 1) * 200; // milliseconds to sleep will be between 200-2000 (0.5-2s)
 
         // sleep - publish progress every 20 ms
-        for (int i = 20; i < number; i += 20) {
+        for (int i = 20; i <= number; i += 20) {
             try {
                 Thread.sleep(i);
                 publishProgress((int) (float) i / number * 100);
